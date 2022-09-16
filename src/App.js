@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
-// Fetch the users data from the REST API
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => {
-        if (res.ok) {
-            console.log("Fetch Success")
-        } else {
-            console.log("Fetch Fail")
-        }
-    })
-    .then(res => res.json()) // Convert the fetch response to Json
-    .then(data => console.log(data))
-
+function FetchUsers() {
+    // Fetch the users data from the REST API
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json()) // Convert the fetch response to Json
+        .then(data => console.log(data))
+    };
 
 // Generic React Page
 function App() {
   return (
-    <div className="App">
+      <div className="App">
+      <FetchUsers></FetchUsers>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
